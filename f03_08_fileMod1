@@ -1,0 +1,31 @@
+def f03_08_fileMod1(f,a,b):
+    """
+    Prints the text from a file with replaced words.
+    Only full words are replaced.
+    The replacement is case-insensitive.
+
+    Parameters
+    ----------
+    f : str
+        Name of the file to open.
+    a : str
+        Word in the text to be replaced
+    b : str
+        Replacement for the word.
+
+    Returns
+    -------
+    None.
+    
+    Implementation constraints
+    --------------------------
+    - target number of non-white characters for the code: 100
+      (docstring and comments are ignored when counting)
+    - use "import" once
+    - remember to close the file after reading
+    - note on closing the files:
+      https://www.geeksforgeeks.org/with-statement-in-python/
+    """
+    import re
+    with open(f) as o: 
+        print(re.sub(rf"\b{a}\b", b, o.read(),flags=re.I),end='')
